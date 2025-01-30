@@ -2,58 +2,46 @@
 
 namespace MarcoBax\StatusField;
 
+use BackedEnum;
 use Laravel\Nova\Fields\Field;
 
 class StatusField extends Field
 {
-    public $showOnCreation = false;
-    public $showOnUpdate = false;
+    public bool $showOnCreation = false;
+    public bool $showOnUpdate = false;
 
     /**
      * The field's component.
-     *
-     * @var string
-     */
-    public $component = 'nova-status-field';
+    public string $component = 'nova-status-field';
 
     /**
      * Define the icons to use for each status.
      * Accepts an array of icon => status value pairs.
-     * 
-     * @since 2.1.0
      *
-     * @param array $icons
-     * @return $this
+     * @since 2.1.0
      */
-    public function icons(array $icons = null)
+    public function icons(array $icons = null): self
     {
         return $this->withMeta(['values' => $icons]);
     }
 
     /**
      * Add a tooltip to the field.
-     *
-     * @param string|array|\BackedEnum $value
-     * @return $this
      */
-    public function tooltip(string|array|\BackedEnum $value = null)
+    public function tooltip(string|array|BackedEnum $value = null): self
     {
         return $this->withMeta([
-            'tooltip' => ($value instanceof \BackedEnum) ? $value->value : $value,
+            'tooltip' => ($value instanceof BackedEnum) ? $value->value : $value,
         ]);
     }
 
     /**
      * Add some extra field information on the detail view.
-     *
-     * @param string|array|\BackedEnum $value
-     * @param bool $displayTooltip
-     * @return $this
      */
-    public function info(string|array|\BackedEnum $value = null, bool $displayTooltip = false)
+    public function info(string|array|BackedEnum $value = null, bool $displayTooltip = false): self
     {
         return $this->withMeta([
-            'info' => ($value instanceof \BackedEnum) ? $value->value : $value,
+            'info' => ($value instanceof BackedEnum) ? $value->value : $value,
             'display_tooltip' => $displayTooltip
         ]);
     }
@@ -61,37 +49,28 @@ class StatusField extends Field
     /**
      * Add custom color(s) to icons.
      * Accepts a single color, or an array of icon => color value pairs.
-     * 
-     * @since 2.1.0
      *
-     * @param string|array $color
-     * @return $this
+     * @since 2.1.0
      */
-    public function color(string|array $color = 'current')
+    public function color(string|array $color = 'current'): self
     {
         return $this->withMeta(['color' => $color]);
     }
 
     /**
      * Define whether the icon should be solid or not.
-     *
-     * @param bool $solid
-     * @return $this
      */
-    public function solid(bool $solid = false)
+    public function solid(bool $solid = false): self
     {
         return $this->withMeta(['solid_icon' => $solid]);
     }
 
     /**
      * Define the icon values to use for each status.
-     * 
+     *
      * @deprecated since version 2.1.0. Use icons() instead.
-     * 
-     * @param array $values
-     * @return $this
      */
-    public function values(array $values = null)
+    public function values(array $values = null): self
     {
         return $this->withMeta([
             'values' => $this->iconAliases($values),
@@ -110,19 +89,15 @@ class StatusField extends Field
     /**
      * Get the icon aliases. Used by the deprecated values() method,
      * to support backwards compatibility.
-     * 
-     * @param array $values
-     * 
-     * @return array
      */
-    private function iconAliases(array $values)
+    private function iconAliases(array $values): array
     {
         $aliases = [
             'inactive' => 'x-circle',
             'active' => 'check-circle',
             'pending' => 'clock',
             'info' => 'info-circle',
-            'warning' => 'exclamation-circle', 
+            'warning' => 'exclamation-circle',
             'help' => 'question-mark-circle',
             'disabled' => 'minus-circle'
         ];

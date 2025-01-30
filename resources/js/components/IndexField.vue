@@ -1,14 +1,19 @@
 <template>
     <div>
         <popper hover :content="getTooltip()">
-            <Icon :solid="this.field.solid_icon" :type="getValue()" :class="getColor()" />
+            <Icon :solid="this.field.solid_icon" :name="getValue()" :class="getColor()" />
         </popper>
     </div>
 </template>
 
 <script>
+import { Icon } from 'laravel-nova-ui'
+
 export default {
     props: ['resourceName', 'field'],
+    components: {
+      Icon
+    },
     methods: {
         getValue: function() {
             if (!this.field.values) return this.field.value;
