@@ -1,6 +1,6 @@
 <?php
 
-namespace WesselPerik\StatusField;
+namespace MarcoBax\StatusField;
 
 use Illuminate\Support\ServiceProvider;
 use Laravel\Nova\Events\ServingNova;

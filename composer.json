@@ -1,6 +1,6 @@
 {
-    "name": "wesselperik/nova-status-field",
-    "description": "A Laravel Nova field for displaying statuses.",
+    "name": "marcobax/nova-status-field",
+    "description": "A Laravel Nova field for displaying statuses for Nova 4 and 5",
     "keywords": [
         "laravel",
         "status",
@@ -13,13 +13,13 @@
     },
     "autoload": {
         "psr-4": {
-            "WesselPerik\\StatusField\\": "src/"
+            "MarcoBax\\StatusField\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "WesselPerik\\StatusField\\FieldServiceProvider"
+                "MarcoBax\\StatusField\\FieldServiceProvider"
             ]
         }
     },

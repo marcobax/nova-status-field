@@ -1,10 +1,9 @@
-<img src="https://raw.githubusercontent.com/wesselperik/nova-status-field/assets/logo.png" alt="Nova Status Field" width="500"/>
+<img src="https://raw.githubusercontent.com/marcobax/nova-status-field/assets/logo.png" alt="Nova Status Field" width="500"/>
 <hr>
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/wesselperik/nova-status-field.svg?style=flat-square)](https://packagist.org/packages/wesselperik/nova-status-field)
-[![Gitmoji](https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=flat-square)](https://gitmoji.carloscuesta.me)
+### 🚀 Compatible with Laravel Nova 4.0 & 5.0!
 
-### 🚀 Compatible with Laravel Nova 4.0!
+Package forked from wesselperik/nova-status-field to add support for Laravel Nova 5.0.
 
 A Laravel Nova field for displaying a status icon, with optional tooltip and info text, on index and detail pages of your models.
 This package utilizes all icons from the [Heroicons](https://heroicons.com/) icon pack (from designer [Steve Schroger](https://twitter.com/steveschoger)), which is also used in Laravel Nova.
@@ -14,7 +13,7 @@ This package utilizes all icons from the [Heroicons](https://heroicons.com/) ico
 You can install the package using composer:
 
 ```bash
-composer require wesselperik/nova-status-field
+composer require marcobax/nova-status-field
 ```
 
 Next up, add the field to your desired Nova model. See the example below:
@@ -22,7 +21,7 @@ Next up, add the field to your desired Nova model. See the example below:
 ```php
 // for example, in app/Nova/Blog.php
 
-use WesselPerik\StatusField\StatusField;
+use MarcoBax\StatusField\StatusField;
 
 // ...
 

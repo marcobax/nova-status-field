@@ -8,7 +8,7 @@ mix
   .js('resources/js/field.js', 'js')
   .vue({ version: 3 })
   .sass('resources/sass/field.scss', 'css')
-  .nova('wesselperik/nova-status-field')
+  .nova('marcobax/nova-status-field')
 
 module.exports = {
   module: {

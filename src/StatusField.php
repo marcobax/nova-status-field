@@ -1,6 +1,6 @@
 <?php
 
-namespace WesselPerik\StatusField;
+namespace MarcoBax\StatusField;
 
 use Laravel\Nova\Fields\Field;
 
