@@ -7,8 +7,8 @@ use Laravel\Nova\Fields\Field;
 
 class StatusField extends Field
 {
-    public bool $showOnCreation = false;
-    public bool $showOnUpdate = false;
+    public $showOnCreation = false;
+    public $showOnUpdate = false;
 
     /**
      * The field's component.
